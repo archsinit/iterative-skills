@@ -1,5 +1,5 @@
 interface:
   display_name: "To Spec"
-  short_description: "Persist intent, next slice and execution authority"
+  short_description: "Persist product agreement and execution authority"
 policy:
   allow_implicit_invocation: false

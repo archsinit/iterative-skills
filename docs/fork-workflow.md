@@ -4,13 +4,13 @@ This fork preserves Matt Pocock's MIT-licensed skill set and historical attribut
 
 | Upstream | This fork |
 | --- | --- |
-| `grill-with-docs` | `grill-the-basics`: first useful slice, facts owned by the agent, consequential decisions only |
-| `to-spec` | Required tracked human-intent and execution-envelope handoff |
+| `grill-with-docs` | `grill-the-basics`: end product and overall success, facts owned by the agent, consequential decisions only |
+| `to-spec` | Required tracked product-agreement and execution-envelope handoff |
 | `to-tickets` | Deprecated archive, excluded from promoted indexes/plugin |
 | `implement-spec` | `implement-loop`: bounded numbered runnable slices, real-surface evidence and local commits |
 | `ask-matt` | Adopted router name `ask-the-playbook` |
 
-The active route is **basics -> spec -> loop**. Do not infer the old ticket graph or optional-spec route from retained upstream prose. The loop selects slices as evidence accumulates; no new dependencies, schedulers or pstack imitation are involved. Host instructions and explicit permissions always win.
+The active route is **basics -> spec -> loop**. Do not infer the old ticket graph or optional-spec route from retained upstream prose. Basics defines the desired end product, not a detailed feature list or roadmap. Spec persists the product agreement and execution envelope without requiring a selected first slice. The loop chooses and precisely defines usable slices toward that outcome as evidence accumulates; no new dependencies, schedulers or pstack imitation are involved. Host instructions and explicit permissions always win.
 
 A latest verified runnable checkpoint is preserved separately from a changing candidate. See [checkpoint mechanics](../skills/engineering/implement-loop/CHECKPOINTS.md). Failed/incomplete iteration commits say NOT runnable; acceptance belongs to the human, not tests. A human-selected earlier checkpoint starts a new branch and the same three-step route with a versioned spec and explicit redirected authority.
 

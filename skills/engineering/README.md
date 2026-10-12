@@ -7,13 +7,13 @@ Skills I use daily for code work.
 Reachable only when you type them (Claude Code: `disable-model-invocation: true`; Codex: `policy.allow_implicit_invocation: false` in `agents/openai.yaml`).
 
 - **[ask-the-playbook](./ask-the-playbook/SKILL.md)**: Route to the fork's main flow or retained standalone tools.
-- **[grill-the-basics](./grill-the-basics/SKILL.md)**: Inspect facts and clarify consequential decisions for the first useful slice.
+- **[grill-the-basics](./grill-the-basics/SKILL.md)**: Inspect facts and clarify the end product, overall success and consequential decisions.
 - **[triage](./triage/SKILL.md)**: Move issues through a state machine of triage roles.
 - **[improve-codebase-architecture](./improve-codebase-architecture/SKILL.md)**: Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.
 - **[setup-matt-pocock-skills](./setup-matt-pocock-skills/SKILL.md)**: Configure this repo for the engineering skills (issue tracker, triage labels, domain doc layout). Run once per repo.
-- **[to-spec](./to-spec/SKILL.md)**: Required tracked intent, next-slice contract and finite authorised execution envelope.
+- **[to-spec](./to-spec/SKILL.md)**: Required tracked product agreement and finite authorised execution envelope.
 - **[implement](./implement/SKILL.md)**: Build the work described by a spec or set of tickets, driving `/tdd` at agent-selected technical seams within authorised outcomes and closing out with `/code-review` before committing.
-- **[implement-loop](./implement-loop/SKILL.md)**: Build bounded numbered runnable slices, verify real surfaces and preserve local iteration checkpoints.
+- **[implement-loop](./implement-loop/SKILL.md)**: Choose, define and build bounded numbered usable slices, verify real surfaces and preserve local iteration checkpoints.
 - **[wayfinder](./wayfinder/SKILL.md)**: Plan a huge chunk of work (more than one agent session can hold) as a shared map of decision tickets on the issue tracker, resolved one at a time until the way to the destination is clear.
 - **[retro](./retro/SKILL.md)**: Suggest improvements to the coding agent's environment (navigation, automated checks, coding standards, steering files, tooling) after a session, most severe first.
 

@@ -1,6 +1,6 @@
 ## What it does
 
-`implement-loop` builds numbered end-to-end runnable slices against the required tracked spec. It preserves the latest verified runnable checkpoint while a candidate evolves, and stops inside finite approved limits.
+`implement-loop` chooses, precisely defines and builds numbered smallest usable end-to-end slices toward the approved end product in the required tracked spec. It preserves the latest verified runnable checkpoint while a candidate evolves, and stops inside finite approved limits.
 
 It is instructions in an active session, not a scheduler or perpetual wake engine. Technical verification is separate from human acceptance.
 
@@ -25,7 +25,7 @@ Every iteration commits code, relevant spec updates and concise evidence locally
 ## Common questions
 
 **Do I have to approve each slice?**
-No, not within an explicitly approved multi-slice envelope. You may inspect, redirect or pause; silence is not acceptance. Decisions outside the mandate still stop the loop.
+No, not when the approved execution envelope delegates slice selection. This includes the first slice, which need not be chosen during basics or spec. The loop records each precise slice contract before building. You may inspect, redirect or pause; silence is not acceptance. Material product changes and permission decisions outside the mandate still stop for your decision.
 
 **Will it keep retrying or wake up on its own?**
 No. Time, slice and repair limits are finite and survive resumes. There is no scheduler. A failed candidate leaves honest evidence and last-good intact.

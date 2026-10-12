@@ -6,9 +6,9 @@ A focused fork of [Matt Pocock's skills](https://github.com/mattpocock/skills), 
 
 **[`/grill-the-basics`](./skills/engineering/grill-the-basics/SKILL.md) -> [`/to-spec`](./skills/engineering/to-spec/SKILL.md) -> [`/implement-loop`](./skills/engineering/implement-loop/SKILL.md)**
 
-1. Inspect facts and clarify consequential product decisions until the first useful slice is understood. Maintain concise domain vocabulary and material decision docs, not an exhaustive interview.
-2. Persist the human's intent, constraints, non-goals, next-slice observable success/failures and approved finite execution envelope. **The spec handoff is required**, including small builds.
-3. Build numbered end-to-end slices, verify the real surface and relevant failures/regressions, assess review findings and commit each iteration locally with permission. Preserve the latest verified runnable checkpoint while the next candidate evolves.
+1. Inspect facts and clarify the desired end product, intended user/use, observable overall success and consequential product decisions. Maintain concise domain vocabulary and material decision docs, not an exhaustive feature/design interview or first-slice gate.
+2. Persist the product agreement, constraints, non-goals and approved finite execution envelope. **The spec handoff is required**, including small builds; no selected first slice or detailed roadmap is required.
+3. Choose, precisely define and build numbered smallest usable end-to-end slices toward the approved product outcome, verify the real surface and relevant failures/regressions, assess review findings and commit each iteration locally with permission. Preserve the latest verified runnable checkpoint while the next candidate evolves.
 
 Within an approved multi-slice mandate, the loop continues without mandatory per-slice human approval. The human can inspect, redirect or pause. Silence is not acceptance; technical verification is not human acceptance. Stop for achieved outcomes, exhausted finite budgets or genuine decisions outside the mandate. A skill is instructions, not a perpetual scheduler. No automatic push, publishing, spending, external communication or destructive actions.
 
@@ -71,11 +71,11 @@ Select the promoted skills only, not deprecated ticket planning. To update, run 
 **User-invoked**
 
 - **[ask-the-playbook](./skills/engineering/ask-the-playbook/SKILL.md)**: Route to the right fork workflow or retained standalone tool.
-- **[grill-the-basics](./skills/engineering/grill-the-basics/SKILL.md)**: Inspect facts and clarify consequential decisions for the first useful slice.
+- **[grill-the-basics](./skills/engineering/grill-the-basics/SKILL.md)**: Inspect facts and clarify the end product, overall success and consequential decisions.
 - **[triage](./skills/engineering/triage/SKILL.md)**: Move incoming issues through triage roles.
 - **[improve-codebase-architecture](./skills/engineering/improve-codebase-architecture/SKILL.md)**: Survey deepening opportunities and clarify the selected one.
 - **[setup-matt-pocock-skills](./skills/engineering/setup-matt-pocock-skills/SKILL.md)**: Configure tracker, triage labels and domain-doc layout for tracker-dependent tools.
-- **[to-spec](./skills/engineering/to-spec/SKILL.md)**: Required persisted intent, next-slice contract and execution envelope.
+- **[to-spec](./skills/engineering/to-spec/SKILL.md)**: Required persisted product agreement and execution envelope.
 - **[implement](./skills/engineering/implement/SKILL.md)**: Retained upstream single-ticket implementation with TDD and review.
 - **[implement-loop](./skills/engineering/implement-loop/SKILL.md)**: Bounded runnable slices, real-surface verification and local iteration checkpoints.
 - **[wayfinder](./skills/engineering/wayfinder/SKILL.md)**: Chart a large foggy effort as decision tickets.

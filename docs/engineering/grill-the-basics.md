@@ -1,8 +1,8 @@
 ## What it does
 
-`grill-the-basics` inspects the project and aligns you and the agent on the first useful slice. It owns facts discoverable in code and docs, and asks you only consequential product, risk, permission or private-knowledge questions.
+`grill-the-basics` inspects the project and aligns you and the agent on the desired end product, intended user/use and observable overall success. It owns facts discoverable in code and docs, and asks you only consequential product, risk, permission or private-knowledge questions.
 
-It stops when that slice is understood, not when an exhaustive decision tree is empty. Reversible implementation details belong to the agent; relevant assumptions stay explicit.
+It stops when the product outcome and consequential decisions are clear, not when a first slice is selected or an exhaustive decision tree is empty. You own the ends; the agent owns implementation and slice selection within approved boundaries. Relevant assumptions stay explicit.
 
 ## When to reach for it
 
@@ -23,14 +23,17 @@ Short recommended rounds focus on decisions that change the outcome or risk. A c
 **Where did `grill-with-docs` go?**
 This fork replaces it with basics. The exhaustive `grilling` primitive remains unchanged for other tools, but basics does not drive it.
 
-**Must I decide the whole product before building?**
-No. Understand the first usable path and its important failures. Later slices and low-risk assumptions can stay provisional.
+**Must I define every feature before building?**
+No. Agree the end product, who will use it, observable overall success and boundaries. Detailed features, design, architecture and a roadmap are not prerequisites.
+
+**Must we choose the first slice here?**
+No. Basics can finish and the spec can be written without one. The loop chooses and precisely defines usable slices toward the approved outcome. A clear first slice is not enough if that overall outcome remains unresolved.
 
 ## It's working if
 
 - The agent cites code/docs instead of asking you to supply discoverable facts.
 - You see a small recommended round about intent or risk, not file names and libraries.
-- The first slice has observable success/failure expectations and explicit assumptions.
+- You can describe the intended end product, user/use, overall success and non-goals without needing a first-slice plan.
 
 ## Where it fits
 
