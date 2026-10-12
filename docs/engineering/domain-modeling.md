@@ -1,3 +1,5 @@
+> **Fork routing:** Basics uses this domain discipline only for relevant terms and material decisions, not whole-repo interrogation. Old grill-with-docs examples below describe upstream context. See [fork workflow](https://github.com/archsinit/iterative-skills/blob/main/docs/fork-workflow.md) and [ask-the-playbook](https://github.com/archsinit/iterative-skills/blob/main/docs/engineering/ask-the-playbook.md).
+
 ## What it does
 
 `domain-modeling` builds and sharpens a project's **ubiquitous language** while you are designing. It challenges a term that conflicts with the glossary, asks for a precise word where you used a vague one, and tests a relationship against a concrete scenario until the boundaries are exact.

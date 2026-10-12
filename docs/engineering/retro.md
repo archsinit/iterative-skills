@@ -1,3 +1,5 @@
+> **Fork routing:** Retro is optional and user-invoked after implement-loop or code-review, not a mandatory human gate. Suggestions never grant access expansion, profile edits or installation authority. Read only current or explicitly authorised session sources. The old chain below describes upstream context; see [fork workflow](https://github.com/archsinit/iterative-skills/blob/main/docs/fork-workflow.md) and [ask-the-playbook](https://github.com/archsinit/iterative-skills/blob/main/docs/engineering/ask-the-playbook.md).
+
 ## What it does
 
 `retro` looks back over a coding [session](https://www.aihero.dev/ai-coding-dictionary/session) and suggests improvements to the agent's **[environment](https://www.aihero.dev/ai-coding-dictionary/environment)**, so the next run goes better. It reads the session's own record (the current one by default, or one you point it at in the session logs). It finds the moments where the agent struggled, and gives you a list of candidate fixes, most severe first.

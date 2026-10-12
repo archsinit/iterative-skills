@@ -1,5 +1,7 @@
 # Explicit `/setup-matt-pocock-skills` pointer only for hard dependencies
 
+> **Fork note:** This historical ADR's dependency principle remains, but its old skill classification does not: local basics, required versioned spec, implementation loop and local-spec review do not require tracker setup. Ticket-tree planning is deprecated. Retained tracker-dependent tools still need their configured tracker.
+
 Engineering skills depend on per-repo config (issue tracker, triage label vocabulary, domain doc layout) seeded by `/setup-matt-pocock-skills`. Some skills cannot meaningfully function without that config: they have to publish to a specific issue tracker or apply a specific label string. Others only use it to sharpen output (vocabulary, ADR awareness) and degrade gracefully without it.
 
 We split these into **hard-dependency** and **soft-dependency** skills:

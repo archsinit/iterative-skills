@@ -1,3 +1,5 @@
+> **Fork routing:** One-question prototype evidence feeds basics and the required local spec before implement-loop. Old planning routes below are upstream context; no prototype grants build/publication authority. See [fork workflow](https://github.com/archsinit/iterative-skills/blob/main/docs/fork-workflow.md) and [ask-the-playbook](https://github.com/archsinit/iterative-skills/blob/main/docs/engineering/ask-the-playbook.md).
+
 ## What it does
 
 `prototype` writes **throwaway code that answers a question**: does this state model feel right, or what should this screen look like. The question comes first and decides what you build. A prototype that answers the wrong question is wasted, however good it looks.

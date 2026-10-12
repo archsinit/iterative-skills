@@ -1,3 +1,5 @@
+> **Fork routing:** Deciding what to build uses basics -> required local spec -> implement-loop. Old grill-with-docs references below are upstream context; wizard remains a standalone manual-setup tool, not extra credential or provisioning permission. See [fork workflow](https://github.com/archsinit/iterative-skills/blob/main/docs/fork-workflow.md) and [ask-the-playbook](https://github.com/archsinit/iterative-skills/blob/main/docs/engineering/ask-the-playbook.md).
+
 ## What it does
 
 `wizard` generates an interactive bash script that walks a human, step by step, through a manual procedure: wiring up third-party services, running a one-off migration, moving a project from state A to state B. It opens each URL, says what to click and copy, captures what comes back, and writes it into `.env` files and GitHub Actions secrets.

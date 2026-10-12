@@ -1,3 +1,5 @@
+> **Fork routing:** Grill-me retains its exhaustive stateless interview. Basics is not the same interview plus docs: it inspects facts and stops at the first useful slice. Software delivery requires the local spec then implement-loop. Old wrapper/map references below are upstream context; see [fork workflow](https://github.com/archsinit/iterative-skills/blob/main/docs/fork-workflow.md) and [ask-the-playbook](https://github.com/archsinit/iterative-skills/blob/main/docs/engineering/ask-the-playbook.md).
+
 ## What it does
 
 `grill-me` takes a **loose idea** and interviews you until you can commit to it. You do not need a worked-out plan to start, because the [session](https://www.aihero.dev/ai-coding-dictionary/session) exists to produce one. It asks in **rounds**. Each round is the whole **frontier**, which is every question whose prerequisites you have already settled. So it never asks you something that depends on an answer it hasn't heard yet.

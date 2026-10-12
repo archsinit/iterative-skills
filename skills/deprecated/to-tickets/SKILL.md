@@ -6,6 +6,8 @@ disable-model-invocation: true
 
 # To Tickets
 
+> **Deprecated in this fork (focused adaptation).** Historical upstream instructions below are retained for reference only, not an active workflow. Use `/grill-the-basics`, then the required `/to-spec`, then `/implement-loop`. Do not execute the archived publication steps.
+
 Break a plan, spec, or conversation into a set of **tickets**: tracer-bullet vertical slices, each declaring the tickets that **block** it.
 
 The issue tracker and triage label vocabulary should have been provided to you. If not, tell the user to run `/setup-matt-pocock-skills`.

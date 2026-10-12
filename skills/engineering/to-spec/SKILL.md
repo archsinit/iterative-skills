@@ -1,75 +1,25 @@
 ---
 name: to-spec
-description: "Turn the current conversation into a spec and publish it to the project issue tracker: no interview, just synthesis of what you've already discussed."
+description: "Persist human intent, the next slice and the authorised execution envelope as a versioned local spec."
 disable-model-invocation: true
 ---
 
-This skill takes the current conversation context and codebase understanding and produces a spec. Do NOT interview the user; just synthesize what you already know.
+# To Spec
 
-The issue tracker and triage label vocabulary should have been provided to you. If not, tell the user to run `/setup-matt-pocock-skills`.
+The REQUIRED handoff between `/grill-the-basics` and `/implement-loop`. Synthesize established understanding, not a second exhaustive interview or technical blueprint. Read relevant code/docs, glossary and ADRs to check facts. If a consequential ambiguity remains, mark it and request that decision (or ask the human to return to `/grill-the-basics`); never silently fill it in.
 
-## Process
+Write a concise tracked file using the repo's spec convention, otherwise `specs/<outcome>/spec.md`. Keep it versioned with the code, not solely in a tracker or ignored scratch folder. No tracker setup is required. External publication needs separate permission; do not publish or add runner-triggering labels automatically.
 
-1. Explore the repo to understand the current state of the codebase, if you haven't already. Use the project's domain glossary vocabulary throughout the spec, and respect any ADRs in the area you're touching.
+## Spec frame
 
-2. Sketch out the seams at which you're going to test the feature. Existing seams should be preferred to new ones. Use the highest seam possible. If new seams are needed, propose them at the highest point you can. The fewer seams across the codebase, the better - the ideal number is one.
+- **Intent and outcomes:** Who needs what, why, and how success is observable.
+- **Constraints, authorised scope and non-goals:** Product, privacy, risk, compatibility and permission boundaries. Separate explicit mandates from proposed scope. Flag changes to previously accepted behavior and record whether authorised.
+- **Next numbered slice:** The smallest runnable end-to-end capability, its trigger/inputs, visible behavior, observable acceptance examples, relevant invalid inputs/failure expectations and regression guarantees. Precise enough to build and try, without fixed file/module lists or a ticket tree.
+- **Provisional later slices:** Brief outcome hypotheses only. Reconsider after evidence, within the authorised scope.
+- **Assumptions and open decisions:** Label each provisional assumption; identify genuine blockers. Link material ADRs and use domain vocabulary. Technical choices remain agent-owned unless constrained by the human.
+- **Execution envelope:** Record approval source and scope; whether one slice or autonomous multi-slice continuation is authorised; a finite overall maximum slice count AND elapsed run-time limit; one initial pass plus at most two focused repair rounds per candidate (lower if requested). Record local-commit authorisation, allowed runtime/data access, and any separately granted consequential permissions. If limits or authority are missing, mark execution blocked pending approval. The skill itself grants none.
+- **Verification and acceptance:** Evidence expected on the real surface and relevant failures/regressions; what could not be verified; human acceptance status separately from technical readiness. Tests demonstrate intent, not expand it.
 
-Check with the user that these seams match their expectations.
+Present the saved path and concise summary for confirmation of intent and execution authority, unless that approval was already explicit. Do not require per-slice approval when the human has authorised bounded multi-slice execution. Missing approval is not supplied by silence. Tell the human to invoke `/implement-loop` with this path; user-only skills cannot invoke one another.
 
-3. Write the spec using the template below, then publish it to the project issue tracker. Apply the `ready-for-agent` triage label - no need for additional triage.
-
-<spec-template>
-
-## Problem Statement
-
-The problem that the user is facing, from the user's perspective.
-
-## Solution
-
-The solution to the problem, from the user's perspective.
-
-## User Stories
-
-A LONG, numbered list of user stories. Each user story should be in the format of:
-
-1. As an <actor>, I want a <feature>, so that <benefit>
-
-<user-story-example>
-1. As a mobile bank customer, I want to see balance on my accounts, so that I can make better informed decisions about my spending
-</user-story-example>
-
-This list of user stories should be extremely extensive and cover all aspects of the feature.
-
-## Implementation Decisions
-
-A list of implementation decisions that were made. This can include:
-
-- The modules that will be built/modified
-- The interfaces of those modules that will be modified
-- Technical clarifications from the developer
-- Architectural decisions
-- Schema changes
-- API contracts
-- Specific interactions
-
-Do NOT include specific file paths or code snippets. They may end up being outdated very quickly.
-
-Exception: if a prototype produced a snippet that encodes a decision more precisely than prose can (state machine, reducer, schema, type shape), inline it within the relevant decision and note briefly that it came from a prototype. Trim to the decision-rich parts, not a working demo, just the important bits.
-
-## Testing Decisions
-
-A list of testing decisions that were made. Include:
-
-- A description of what makes a good test (only test external behavior, not implementation details)
-- Which modules will be tested
-- Prior art for the tests (i.e. similar types of tests in the codebase)
-
-## Out of Scope
-
-A description of the things that are out of scope for this spec.
-
-## Further Notes
-
-Any further notes about the feature.
-
-</spec-template>
+Update the spec alongside each implementation iteration when evidence clarifies assumptions or the next slice. Keep original intent and accepted guarantees intact; proposed product changes outside the mandate return to the human. Every checkpoint carries the spec version that applies to it.

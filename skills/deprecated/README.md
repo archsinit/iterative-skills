@@ -1,3 +1,5 @@
 # Deprecated
 
-Skills I no longer use. This bucket is currently empty: a retired skill is deleted, and the changeset that removes it names whatever replaced it.
+Retained historical skills, excluded from the active fork workflow and plugin.
+
+- **[to-tickets](./to-tickets/SKILL.md)**: Archived upstream ticket-tree planning; this fork uses a required spec and bounded implementation loop instead.

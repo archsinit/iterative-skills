@@ -1,3 +1,5 @@
+> **Fork routing:** This remains design vocabulary. Basics replaces the old grill-with-docs driver; the current fork map is [ask-the-playbook](https://github.com/archsinit/iterative-skills/blob/main/docs/engineering/ask-the-playbook.md). Old route references below describe upstream context; see [fork workflow](https://github.com/archsinit/iterative-skills/blob/main/docs/fork-workflow.md).
+
 ## What it does
 
 `codebase-design` fixes the words you use to design a module: **module**, **interface**, **depth**, **seam**, **adapter**, **leverage**, **locality**. It defines each one precisely, bans the loose substitutes ("component", "service", "API", "boundary"), and states the handful of principles that follow from them.

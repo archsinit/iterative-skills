@@ -1,3 +1,5 @@
+> **Fork routing:** This remains a standalone tool, with targeted support compatibility: TDD selects technical seams within authorised outcomes and code-review covers relevant current uncommitted work against a local spec. The pre-agreed-seam and committed-only review limitations described below are historical upstream context. The upstream build-sequence references below are historical context, not this fork's active route. Use basics -> required spec -> loop for bounded delivery; see [fork workflow](https://github.com/archsinit/iterative-skills/blob/main/docs/fork-workflow.md) and [ask-the-playbook](https://github.com/archsinit/iterative-skills/blob/main/docs/engineering/ask-the-playbook.md).
+
 ## What it does
 
 `implement` builds work that has already been decided. You point it at a [ticket](https://www.aihero.dev/ai-coding-dictionary/ticket), a [spec](https://www.aihero.dev/ai-coding-dictionary/spec), or the plan you just agreed in the conversation, and it writes the code, drives [tdd](https://aihero.dev/skills-tdd) at the seams, typechecks as it goes, runs [code-review](https://aihero.dev/skills-code-review) at the end, and commits to the current branch.

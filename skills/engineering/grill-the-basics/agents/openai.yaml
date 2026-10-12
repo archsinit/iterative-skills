@@ -1,0 +1,5 @@
+interface:
+  display_name: "Grill the Basics"
+  short_description: "Clarify the first useful slice, not every detail"
+policy:
+  allow_implicit_invocation: false

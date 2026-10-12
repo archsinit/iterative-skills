@@ -1,3 +1,5 @@
+> **Fork routing:** Triage remains for incoming issues. The old spec/ticket routes below describe upstream context, not this fork's active delivery path. Capture intent in the required local spec before implement-loop; see [fork workflow](https://github.com/archsinit/iterative-skills/blob/main/docs/fork-workflow.md) and [ask-the-playbook](https://github.com/archsinit/iterative-skills/blob/main/docs/engineering/ask-the-playbook.md).
+
 ## What it does
 
 `triage` works through the issues on your project's tracker. It moves each one through a small state machine of **triage roles** (a category role and a state role). Each issue ends as an agent-ready brief, a specific question for the reporter, or a closed issue with a recorded reason.

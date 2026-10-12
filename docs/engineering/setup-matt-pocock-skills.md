@@ -1,3 +1,5 @@
+> **Fork routing:** Setup is for retained tracker-dependent tools, not a prerequisite for local basics/spec/loop. Old publishing/ticket references below describe upstream context; this fork's spec is tracked with code and does not auto-publish. See [fork workflow](https://github.com/archsinit/iterative-skills/blob/main/docs/fork-workflow.md) and [ask-the-playbook](https://github.com/archsinit/iterative-skills/blob/main/docs/engineering/ask-the-playbook.md).
+
 ## What it does
 
 `setup-matt-pocock-skills` answers three questions about one repo: where issues live, what the triage labels are called, and where the domain docs sit. It records the answers as markdown files under `docs/agents/`.

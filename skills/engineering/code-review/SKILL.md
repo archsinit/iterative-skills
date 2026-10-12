@@ -1,35 +1,35 @@
 ---
 name: code-review
-description: "Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to \"review since X\"."
+description: "Review a fixed-baseline diff, including relevant uncommitted work, on separate Standards and Spec axes. Use for branch, PR, current slice or work-in-progress review; use permitted independent reviewers or label self-review honestly."
 ---
 
-Two-axis review of the diff between `HEAD` and a fixed point the user supplies:
+Two-axis review against a fixed baseline the user supplies or the authorised iteration record pins:
 
 - **Standards**: does the code conform to this repo's documented coding standards?
 - **Spec**: does the code faithfully implement the originating issue / spec?
 
-Both axes run as **parallel sub-agents** so they don't pollute each other's context, then this skill aggregates their findings.
-
-The issue tracker should have been provided to you. If not, tell the user to run `/setup-matt-pocock-skills`.
+Keep the two axes separate. Use independent reviewers when available and permitted, otherwise label **SELF-REVIEW**. A local versioned spec is sufficient; tracker setup is not required. Review is not acceptance or permission to change scope. Apply the enclosing run's finite budget, with no recursive delegation or automatic access expansion.
 
 ## Process
 
 ### 1. Pin the fixed point
 
-Whatever the user said is the fixed point (a commit SHA, branch name, tag, `main`, `HEAD~5`, etc.). If they didn't specify one, ask for it.
+Resolve and pin the baseline SHA (commit, branch, tag or explicitly intended merge-base). Use the recorded iteration baseline when supplied; otherwise ask rather than guess. Validate it with `git rev-parse <fixed-point>^{commit}`.
 
-Capture the diff command once: `git diff <fixed-point>...HEAD` (three-dot, so the comparison is against the merge-base). Also note the list of commits via `git log <fixed-point>..HEAD --oneline`.
+For committed branch review, use `git diff <baseline-sha>...HEAD` when merge-base comparison is intended. For a current slice, use `git diff <baseline-sha>` to include the tracked working-tree and staged state, plus `git status --short` and `git ls-files --others --exclude-standard` to identify relevant new files. Read authorised new source/spec/evidence files separately; do not stage them just for review. If both staged and unstaged changes to the same file matter, inspect `git diff --cached` and `git diff` too. Note commits with `git log <baseline-sha>..HEAD --oneline`.
 
-Before going further, confirm the fixed point resolves (`git rev-parse <fixed-point>`) and the diff is non-empty. A bad ref or empty diff should fail here, not inside two parallel sub-agents.
+Record the exact commands, relevant file scope and review state. Exclude unrelated dirty work and private runtime data without silently losing candidate files. A bad ref or genuinely empty scoped change stops review. Recheck that the diff has not changed before applying findings; stale review evidence is not current verification.
 
 ### 2. Identify the spec source
 
-Look for the originating spec, in this order:
+Read the local versioned spec first:
 
-1. Issue references in the commit messages (`#123`, `Closes #45`, GitLab `!67`, etc.), fetched via the workflow in the tracker doc.
-2. A path the user passed as an argument.
-3. A spec file under `docs/`, `specs/`, or `.scratch/` matching the branch name or feature.
-4. If nothing is found, ask the user where the spec is. If they say there isn't one, the **Spec** sub-agent will skip and report "no spec available".
+1. The path supplied by the user or iteration record, including relevant current-slice spec changes.
+2. A tracked spec under the repo's `specs/` or documented convention matching this work, read in full.
+3. An originating issue only if no local contract exists and tracker access is configured and authorised. No automatic fetch or publication.
+4. If none is found, ask for it. If there is no spec, the Spec axis reports "no spec available"; do not invent requirements or treat a skipped axis as a pass. A required implement-loop handoff cannot be bypassed this way.
+
+Distinguish approved intent from candidate-proposed scope changes. The Spec axis checks observable outcomes, failures, regressions and permission boundaries, not compliance with an invented technical blueprint. Passing tests do not establish usefulness; examine real-surface evidence and label unavailable checks.
 
 ### 3. Identify the standards sources
 
@@ -55,9 +55,11 @@ Each smell reads *what it is* → *how to fix*; match it against the diff:
 - **Middle Man**: a class or function that mostly just delegates onward. → cut it, call the real target direct.
 - **Refused Bequest**: a subclass or implementer that ignores or overrides most of what it inherits. → drop the inheritance, use composition.
 
-### 4. Spawn both sub-agents in parallel
+### 4. Review with the available runtime
 
-Issue both sub-agent calls together, in the foreground, and aggregate the reports they return.
+Where permitted, dispatch narrow independent Standards and Spec reviewers through the host's available mechanism, preferably in the background so the human can continue. Honour host worker-count limits and completion delivery; do not poll, duplicate their tasks or claim completion before reports arrive. Give read-only scope, finite stopping budgets, safe pointers and the exact diff commands including uncommitted/new files when relevant. Workers must not invoke code-review, delegate recursively, write, commit, publish, use credentials or expand access.
+
+If running as a worker, perform the assigned review directly, never spawn more workers. If independent tools are unavailable or forbidden, perform both axes directly and prominently label SELF-REVIEW. A failed/timed-out reviewer is unavailable evidence, not permission for unlimited retries. Report which axes were independently reviewed and which were self-reviewed.
 
 **Standards sub-agent prompt** should include:
 
@@ -71,11 +73,11 @@ Issue both sub-agent calls together, in the foreground, and aggregate the report
 - The path or fetched contents of the spec.
 - The brief: "Report: (a) requirements the spec asked for that are missing or partial; (b) behaviour in the diff that wasn't asked for (scope creep); (c) requirements that look implemented but where the implementation looks wrong. Quote the spec line for each finding. Under 400 words."
 
-If the spec is missing, skip the Spec sub-agent and note this in the final report.
+If the spec is missing, skip the Spec review and note this in the final report. Each reviewer brief also says: "Do not invoke code-review or delegate. Review only the scoped diff and safe files against the stated sources and real-surface evidence; stop at the supplied budget. Report unavailable evidence honestly."
 
 ### 5. Aggregate
 
-Present the two reports under `## Standards` and `## Spec` headings, verbatim or lightly cleaned. Do **not** merge or rerank findings, because the two axes are deliberately separate (see _Why two axes_).
+Present the reports under `## Standards` and `## Spec`, with review mode and unavailable evidence. Keep the axes separate; one cannot mask the other. Verify each cited finding against current files, approved intent and evidence. Distinguish relevant defects from speculative preferences or mistaken tests; record disposition and reasoning rather than blindly applying suggestions. Repairs consume the enclosing candidate budget. Do not loop reviews until nothing is found, invent requirements or silently change accepted behavior.
 
 End with a one-line summary: total findings per axis, and the worst issue _within each axis_ (if any). Don't pick a single winner across axes: that's the reranking the separation exists to prevent.
 

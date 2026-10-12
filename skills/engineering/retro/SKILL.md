@@ -6,6 +6,8 @@ disable-model-invocation: true
 
 The user has asked for a **retrospective**. You are suggesting improvements to the coding agent's **environment** to improve future runs.
 
+This is optional and user-invoked after a build or review, never a mandatory per-slice human gate. Use only the current session or explicitly authorised primary sources; do not inspect unrelated histories. Suggestions do not authorise implementation, installation, global profile changes or expanded information access. Ask for the applicable permission before any such change.
+
 ## Steps
 
 1. Call the Skill tool with `writing-for-agents` for the writing style guide.

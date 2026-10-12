@@ -1,3 +1,5 @@
+> **Fork routing:** Wayfinder remains a decision-map tool. Its resolved decisions feed the required local spec, then implement-loop, not the archived ticket-tree route. Old planning names below describe upstream context; see [fork workflow](https://github.com/archsinit/iterative-skills/blob/main/docs/fork-workflow.md) and [ask-the-playbook](https://github.com/archsinit/iterative-skills/blob/main/docs/engineering/ask-the-playbook.md).
+
 ## What it does
 
 `wayfinder` takes an effort too big for one agent [session](https://www.aihero.dev/ai-coding-dictionary/session). This is an idea whose **destination** you can name but whose route you cannot yet see. Wayfinder charts it as a shared **map** of **decision tickets** on your issue tracker, then resolves the tickets one at a time until the route is clear.
